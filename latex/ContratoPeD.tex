@@ -1,0 +1,59 @@
+%-----------------------------------------------------------
+% Contrato de P\&D TAESA
+% Version 1.0 (Fevereiro 2020)
+%
+% Esta minuta de contrato foi elaborada para avaliar a facilidade de de edição de contratos por meio do uso do LaTeX, permitindo a utilização de ferramentas de colaboração e controle de versão.
+%
+%-----------------------------------------------------------
+
+%\documentclass[a4paper,12pt,twoside]{report} % Página default, 2Lados, font size is 12pt on A4 paper
+\documentclass[a4paper,11pt,notitlepage]{report} % Página default, single-side, font size is 12pt on A4 paper
+
+%-----------------------------------------------------------
+%	Configuração Inicial dos pacotes e funcionalidades 
+% Vide arquivo 10_Configuracao_inicial.tex
+%-----------------------------------------------------------
+\input{Estrutura_do_Contrato/10_Configuracao_inicial.tex} % Input the 10_Configuracao_inicial.tex file which specifies the document packages and features
+
+%-----------------------------------------------------------
+%	PREENCHIMENTO DE DADOS
+%-----------------------------------------------------------
+\input{Dados_do_Contrato/01_Dados_Contratante.tex}
+\input{Dados_do_Contrato/02_Dados_Cooperada.tex}
+\input{Dados_do_Contrato/03_Dados_Executora.tex}
+\input{Dados_do_Contrato/04_Dados_Interveniente.tex}
+\input{Dados_do_Contrato/05_Dados_Projeto.tex}
+
+%%%%%% ===========================  Inicio do Contrato  ============================ %%%%%%
+\begin{document}
+\input{Estrutura_do_Contrato/01_Cabecalho.tex} % Input the 03_Cabecalho.tex file
+\pagestyle{plain} % define o estilo do cabeçalho e rodaé da pagina, com linhas e numeração ao centro
+
+%%%%%% ===========================  Corpo do Contrato  ============================ %%%%%%
+
+\input{Estrutura_do_Contrato/02_INTRODUCAO.tex} 
+
+%%%%% ======================  Lista das cláusulas do contrato  ============================ %%%%%%
+\begin{easylist}
+  \ListProperties(Start1*=\thesection,Margin2=0cm,Margin3=1cm,Margin4=2.3cm,Margin5=3.9cm, Hang=true, Style*=\bfseries)
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/01_OBJETO_E_DOCUMENTACAO_INTEGRANTE_copy}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/02_DA_PROPRIEDADE_INDUSTRIAL_E_UTILIZACAO_DOS_RESULTADOS}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/03_OBRIGACOES_DA(S)_EXECUTORA(S)}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/04_OBRIGACOES_DA(S)_COOPERADAS_E_DA_PROPONENTE}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/05_VALOR_DOS_REPASSES_FINANCEIROS}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/06_CONDICOES_DOS_REPASSES_FINANCEIROS}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/07_PRAZO_PARA_EXECUCAO_DO_PROJETO_E_VIGENCIA}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/08_PENALIDADES}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/09_EXTINCAO_DO_CONTRATO}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/10_DA_CESSAO}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/11_CONFIDENCIALIDADE}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/12_DA_SUBCONTRATACAO}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/13_COMUNICACOES}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/14_RESOLUCAO_DE_CONFLITOS}
+  \input{Estrutura_do_Contrato/00_CLAUSULAS/15_DISPOSICOES_FINAIS}
+\end{easylist}
+
+\input{Estrutura_do_Contrato/03_ASSINATURAS.tex}  
+
+%%%%% ======================  Fim do Corpo do Contrato  ============================ %%%%%%
+\end{document}

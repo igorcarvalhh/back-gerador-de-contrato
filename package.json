@@ -1,0 +1,27 @@
+{
+  "name": "back-gerador-de-contrato",
+  "version": "1.0.0",
+  "description": "api rest para o projeto do gerador de contratos",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/igorcarvalhh/back-gerador-de-contrato.git"
+  },
+  "author": "igor carvalho ramos leal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/igorcarvalhh/back-gerador-de-contrato/issues"
+  },
+  "homepage": "https://github.com/igorcarvalhh/back-gerador-de-contrato#readme",
+  "dependencies": {
+    "@prisma/client": "^5.0.0",
+    "cors": "^2.8.5",
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.0.0"
+  }
+}

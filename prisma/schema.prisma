@@ -1,0 +1,124 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// Contratos Models
+
+model Empresa {
+  id                Int            @id @default(autoincrement())
+  nome              String
+  nomeResumido      String
+  cnpj              String         @unique @db.Char(14)
+  telefone          String
+  cep               String         @db.Char(8)
+  endereco          String
+  numeroEndereco    String
+  complemento       String
+  estado            String
+  bairro            String
+  cidade            String
+  deEnergia         Boolean
+  matriz            Boolean
+  participantes     Participante[]
+  repassesPagos     Repasse[]      @relation("RepassesPagos")
+  repassesRecebidos Repasse[]      @relation("RepassesRecebidos")
+}
+
+model Projeto {
+  id             Int       @id @default(autoincrement())
+  apelido        String?
+  tituloCompleto String?
+  objetivo       String?
+  fases          Fase[]
+  contrato       Contrato?
+}
+
+model Contrato {
+  id             Int            @id @default(autoincrement())
+  hash           String         @unique
+  status         ContratoStatus @default(ABERTO)
+  projetoId      Int            @unique
+  projeto        Projeto?       @relation(fields: [projetoId], references: [id])
+  dataAssinatura DateTime?
+  participantes  Participante[]
+}
+
+// Validar os status do contrato
+enum ContratoStatus {
+  ABERTO
+  FECHADO
+}
+
+model Participante {
+  id            Int              @id @default(autoincrement())
+  empresaId     Int
+  empresa       Empresa          @relation(fields: [empresaId], references: [id])
+  contratoId    Int
+  contrato      Contrato         @relation(fields: [contratoId], references: [id])
+  tipo          TipoParticipante
+  representante String?
+  cargo         String?
+}
+
+enum TipoParticipante {
+  PROPONENTE
+  COOPERADA
+  EXECUTORA
+}
+
+model Fase {
+  id          Int     @id @default(autoincrement())
+  codigoAneel String
+  faseCadeia  String
+  trl         Int
+  projeto     Projeto @relation(fields: [projetoId], references: [id])
+  projetoId   Int
+  etapas      Etapa[]
+}
+
+model Etapa {
+  id          Int          @id @default(autoincrement())
+  numero      Int
+  prazo       String
+  fase        Fase         @relation(fields: [faseId], references: [id])
+  faseId      Int
+  entregaveis Entregavel[]
+  repasses    Repasse[]
+}
+
+model Entregavel {
+  id         Int    @id @default(autoincrement())
+  quantidade Int
+  descricao  String
+  etapa      Etapa  @relation(fields: [etapaId], references: [id])
+  etapaId    Int
+}
+
+model Repasse {
+  id           Int      @id @default(autoincrement())
+  valor        Float
+  rubrica      Rubrica
+  pagadora     Empresa? @relation("RepassesPagos", fields: [pagadoraId], references: [id])
+  pagadoraId   Int?
+  recebedora   Empresa? @relation("RepassesRecebidos", fields: [recebedoraId], references: [id])
+  recebedoraId Int?
+  etapa        Etapa    @relation(fields: [etapaId], references: [id])
+  etapaId      Int
+}
+
+enum Rubrica {
+  RH
+  ST
+  MC
+  VD
+  MV
+  OU
+}
