@@ -36,18 +36,18 @@ Todos os dados do contrato ficam na pasta `Dados_do_Contrato`, os dados estão s
 | NomeContratante | descricao |
 | NomeContratanteResumido | descricao |
 | EnderecoContratante | descricao |
-| NumeroEnderecoContratante | descricao |
 | ComplementoEnderecoContratante | descricao |
 | BairroContratante | descricao |
+| CEPContratante | descricao |
 | CidadeEnderecoContratante | descricao |
+| EstadoEnderecoContratante | descricao |
 | NumCNPJContratante | descricao |
 | TelefoneContratante | descricao |
 | EmailContratante | descricao |
 | DiretorUmContratante | descricao |
 | DiretorDoisContratante | descricao |
 
-
-## Dados Cooperada
+### Dados Cooperada
 
 | Nome da varável | Descrição |
 |-----------------|-----------|
@@ -66,3 +66,110 @@ Todos os dados do contrato ficam na pasta `Dados_do_Contrato`, os dados estão s
 | CargoRepresentanteCooperada | descricao |
 | DiretorUmCooperada | descricao |
 | DiretorDoisCooperada | descricao |
+
+### Dados Executora
+
+| Nome da varável | Descrição |
+|-----------------|-----------|
+| NomeExecutoraA | descricao |
+| NomeExecutoraAResumido | descricao |
+| EnderecoExecutoraA | descricao |
+| ComplementoEnderecoExecutoraA | descricao |
+| BairroExecutoraA | descricao |
+| CEPExecutoraA | descricao |
+| CidadeEnderecoExecutoraA | descricao |
+| EstadoEnderecoExecutoraA | descricao |
+| NumCNPJExecutoraA | descricao |
+| TelefoneExecutoraA | descricao |
+| EmailExecutoraA | descricao |
+| NomeRepresentanteExecutoraA | descricao |
+| CargoRepresentanteExecutoraA | descricao |
+| DiretorUmExecutoraA | descricao |
+| DiretorDoisExecutoraA | descricao |
+| BancoExeutoraA | descricao |
+| AgenciaExecutoraA | descricao |
+| ContaCorrenteExecutoraA | descricao |
+| TitularidadeExecutoraA | descricao |
+| NomeExecutoraB | descricao |
+| NomeExecutoraBResumido | descricao |
+| EnderecoExecutoraB | descricao |
+| ComplementoEnderecoExecutoraB | descricao |
+| BairroExecutoraB | descricao |
+| CEPExecutoraB | descricao |
+| CidadeEnderecoExecutoraB | descricao |
+| EstadoEnderecoExecutoraB | descricao |
+| NumCNPJExecutoraB | descricao |
+| TelefoneExecutoraB | descricao |
+| EmailExecutoraB | descricao |
+| NomeRepresentanteExecutoraB | descricao |
+| CargoRepresentanteExecutoraB | descricao |
+| DiretorUmExecutoraB | descricao |
+| DiretorDoisExecutoraB | descricao |
+| BancoExeutoraB | descricao |
+| AgenciaExecutoraB | descricao |
+| ContaCorrenteExecutoraB | descricao |
+| TitularidadeExecutoraB | descricao |
+
+### Dados Interveniente
+
+| Nome da varável | Descrição |
+|-----------------|-----------|
+| IntervenienteANome | descricao |
+| IntervenienteAEndereco | descricao |
+| IntervenienteACNPJ | descricao |
+| RepresentanteAIntervenienteA | descricao |
+| RepresentanteAIntervenienteACI | descricao |
+| RepresentanteAIntervenienteACPF | descricao |
+| RepresentanteBIntervenienteA | descricao |
+| RepresentanteBIntervenienteACI | descricao |
+| RepresentanteBIntervenienteACPF | descricao |
+| IntervenienteBNome | descricao |
+| IntervenienteBEndereco | descricao |
+| IntervenienteBCNPJ | descricao |
+| RepresentanteAIntervenienteB | descricao |
+| RepresentanteAIntervenienteBCI | descricao |
+| RepresentanteAIntervenienteBCPF | descricao |
+| RepresentanteBIntervenienteB | descricao |
+| RepresentanteBIntervenienteBCI | descricao |
+| RepresentanteBIntervenienteBCPF | descricao |
+
+### Dados Projeto
+
+| Nome da varável | Descrição |
+|-----------------|-----------|
+| NumeroContrato | descricao |
+| DataDaCelebracao | descricao |
+| DataCompletaCelebracao | descricao |
+| NumeroProjeto | descricao |
+| CodAneelProjeto | descricao |
+| ApelidoProjeto | descricao |
+| Consessoes | descricao |
+| DataFimProjeto | descricao |
+| PrazoProjetoEmMeses | descricao |
+| PrazoProjetoEmMesesExtenso | descricao |
+| DataFimFaseDE | descricao |
+| DataFimFaseCS | descricao |
+| DataFimFaseIM | descricao |
+| TituloCompletoProjeto | descricao |
+| ObjetoDoProjeto | descricao |
+| ObjetivoDoProjeto | descricao |
+| TituloCompletoProjetoDE | descricao |
+| ObjetoDoProjetoDE | descricao |
+| ObjetivoResumidoDoProjetoDE | descricao |
+| TituloCompletoProjetoCS | descricao |
+| ObjetoDoProjetoCS | descricao |
+| ObjetivoResumidoDoProjetoCS | descricao |
+| TituloCompletoProjetoIM | descricao |
+| ObjetoDoProjetoIM | descricao |
+| ObjetivoResumidoDoProjetoIM | descricao |
+| NomeTestemunhaA | descricao |
+| NomeTestemunhaB | descricao |
+| CPFTestemunhaA | descricao |
+| CPFTestemunhaB | descricao |
+| ValorContrato | descricao |
+| RepasseProponenteExecutoraA | descricao |
+| RepasseProponenteExecutoraB | descricao |
+| RepasseCooperadaExecutoraA | descricao |
+| RepasseCooperadaExecutoraB | descricao |
+| ValorTotalCP | descricao |
+| DotacaoOrcamentaria | descricao |

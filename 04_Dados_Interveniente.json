@@ -1,0 +1,20 @@
+{
+  "IntervenienteANome": "",
+  "IntervenienteAEndereco": "",
+  "IntervenienteACNPJ": "",
+  "RepresentanteAIntervenienteA": "",
+  "RepresentanteAIntervenienteACI": "",
+  "RepresentanteAIntervenienteACPF": "",
+  "RepresentanteBIntervenienteA": "",
+  "RepresentanteBIntervenienteACI": "",
+  "RepresentanteBIntervenienteACPF": "",
+  "IntervenienteBNome": "",
+  "IntervenienteBEndereco": "",
+  "IntervenienteBCNPJ": "",
+  "RepresentanteAIntervenienteB": "",
+  "RepresentanteAIntervenienteBCI": "",
+  "RepresentanteAIntervenienteBCPF": "",
+  "RepresentanteBIntervenienteB": "",
+  "RepresentanteBIntervenienteBCI": "",
+  "RepresentanteBIntervenienteBCPF": ""
+}
