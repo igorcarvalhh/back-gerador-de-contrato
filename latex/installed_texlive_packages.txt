@@ -1,2 +1,0 @@
-(running on Debian, switching to user mode!)
-(see /usr/share/doc/texlive-base/README.tlmgr-on-Debian.md)

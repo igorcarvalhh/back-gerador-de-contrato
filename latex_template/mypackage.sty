@@ -1,0 +1,41 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{mypackage}[2023/05/27 Example package]
+
+\RequirePackage{easylist}
+\RequirePackage{hyperref}
+
+%%Numbered environment
+
+%%Important words are added to the index and printed in different colour
+\catcode`#=\active
+
+\newcommand{\x}{
+    %\addtocounter{List1}{1}
+    \hypertarget{\arabic{List1}}{}
+    %\addtocounter{List1}{-1}
+    # }
+
+\newcommand{\xx}{
+    ## 
+    %\addtocounter{List2}{1}
+    \hypertarget{\arabic{List1}.\arabic{List2}}{}
+    %\addtocounter{List2}{-1}
+    }
+
+\newcommand{\xxx}{
+    ### 
+    %\addtocounter{List3}{-1}
+    \hypertarget{\arabic{List1}.\arabic{List2}.\arabic{List3}}{}
+    %\addtocounter{List3}{1}
+    }
+
+\newcommand{\xxxx}{
+    #### 
+    %\addtocounter{List4}{1}
+    \hypertarget{\arabic{List1}.\arabic{List2}.\arabic{List3}.\arabic{List4}}{}
+    %\addtocounter{List4}{-1}
+    }
+
+\catcode`#=\SharpCatcode
+
+\newcommand{\causula}[1]{\section{#1}}

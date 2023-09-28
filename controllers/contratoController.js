@@ -113,6 +113,28 @@ exports.deleteOneContrato = async (req, res, next) => {
     .catch((error) => next(error));
 };
 
+function fatorial(n) {
+  if (n < 0) {
+    return undefined;
+  }
+  let resultado = 1n;
+  for (let i = 2n; i <= n; i++) {
+    resultado *= i;
+  }
+  return resultado;
+}
+
+
+// gerar pdf do contrato
 exports.gerarContrato = async (req, res, next) => {
-  res.download("latex/ContratoPeD.pdf");
+
+  console.log("recebeu")
+  const inicio = performance.now();
+  const valor = fatorial(99999)
+  console.log("enviou")
+  const fim = performance.now();
+  console.log(`Tempo de execução: ${fim - inicio} milissegundos`);
+  res.json({valor: "calculou"})
+
+  //res.download("latex/ContratoPeD.pdf");
 };
