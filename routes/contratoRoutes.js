@@ -21,6 +21,6 @@ router.get("/contratos/:id", readOneContrato);
 router.put("/contratos/:id", updateOneContrato);
 router.delete("/contratos/:id", deleteOneContrato);
 
-router.get("/gerar-contrato", gerarContrato);
+router.post("/gerar-contrato", gerarContrato);
 
 module.exports = router;

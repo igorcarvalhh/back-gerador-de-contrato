@@ -1,6 +1,8 @@
 const { PrismaClient, Prisma } = require("@prisma/client");
 const { getRandomHash } = require("../utils/hash");
-const fs = require("fs");
+const fs = require("fs-extra");
+const { generateContract } = require("../contract-generator");
+const { exec } = require("child_process");
 const prisma = new PrismaClient();
 
 const nullContrato = {
@@ -127,14 +129,25 @@ function fatorial(n) {
 
 // gerar pdf do contrato
 exports.gerarContrato = async (req, res, next) => {
+  const hash = req.header("Hash");
+  const { body } = req
+  const pdfFilePath = await generateContract(hash, body)
 
-  console.log("recebeu")
-  const inicio = performance.now();
-  const valor = fatorial(99999)
-  console.log("enviou")
-  const fim = performance.now();
-  console.log(`Tempo de execução: ${fim - inicio} milissegundos`);
-  res.json({valor: "calculou"})
+  fs.stat(pdfFilePath, (err, stats) => {
+    if (err || !stats.isFile()) {
+      return res.status(404).send('File not found');
+    }
 
-  //res.download("latex/ContratoPeD.pdf");
+    // Send the file as a response
+    res.setHeader('Content-Type', 'application/pdf');
+    res.setHeader('Content-Disposition', 'attachment; filename=file.pdf');
+    const fileStream = fs.createReadStream(pdfFilePath);
+    fileStream.pipe(res);
+    
+    // Delete the file after sending
+    fileStream.on('end', async () => {
+      await fs.remove("./latex");
+    });
+  });
+
 };
